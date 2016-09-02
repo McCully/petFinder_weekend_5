@@ -1,0 +1,18 @@
+.pet-image{
+  height: 100%;
+  width: 100%;
+}
+.sidenav {
+  padding-top: 20px;
+  background-color: #f1f1f1;
+  height: 100%;
+  float:right;
+}
+.navbar {
+  margin-bottom: 0;
+  border-radius: 0;
+  display: block;
+}
+.row.content {
+  height:auto;
+}

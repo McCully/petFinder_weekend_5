@@ -1,0 +1,60 @@
+<div ng-include="'views/templates/nav.html'"></div>
+
+<div class="pet-page">
+
+    <h2>Find a Pet</h2>
+
+    <div class="dropdown" col-md-3>
+        <form>
+
+
+            <select name="animalList" ng-change="chooseAnimal()" ng-model="animalDropdown">
+                <option value="" selected="selected">Select Animal</option>
+                <li class="divider"></li>
+                <option value="dog">Dog</option>
+                <option value="cat">Cat</option>
+                <option value="smallfurry">Small Furry Animal</option>
+                <option value="barnyard">Barnyard</option>
+                <option value="bird">Bird</option>
+                <option value="horse">Horse</option>
+                <option value="pig">Pig</option>
+                <option value="reptile">Reptile</option>
+            </select>
+        </form>
+    </div>
+    <div class="col-sm-3 sidenav">
+        <div class="well">
+            <p class="num-faves">Number of Favorites: {{favorites.length}}</p>
+        </div>
+    </div>
+
+    <div ng-show="showAnimal">
+
+        <div class="container-fluid text-center">
+        <div class="row content">
+          <div class="col-sm-2 sidenav-left">
+            <div class="pet-image"><img ng-src="{{animal.media.photos.photo[2].$t}}" class="random-pet-image" style="height:300px;width:200px;"></div>
+          </div>
+        </div>
+      </div>
+
+        <div class="pet-info" style="display:inline-block;">
+
+            <h3>{{animal.name.$t}}</h3>
+            <p>Breed: {{animal.breeds.breed.$t}}</p>
+            <p>Age: {{animal.age.$t}}</p>
+            <p>Gender: {{animal.sex.$t}}</p>
+            <p>Shelter ID: {{animal.shelterId.$t}}</p>
+            <p>Shelter Address: {{animal.contact.address1.$t}}, {{animal.contact.city.$t}},
+                {{animal.contact.state.$t}} {{animal.contact.zip.$t}}</p>
+            <p>Shelter email: {{animal.contact.email.$t}}</p>
+            <p>Shelter Phone: {{animal.contact.phone.$t}}</p>
+
+            <p>Description: {{animal.description.$t}}</p>
+            <button class="button" ng-click="addFavorite()">Add to Favorites</button>
+            <span ng-show="favoriteAdded" class="favorite-added">favorite added!</span>
+        </div>
+
+    </div>
+
+</div>

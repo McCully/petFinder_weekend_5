@@ -1,0 +1,37 @@
+<div ng-include="'views/templates/nav.html'"></div>
+
+<div class="favorites-page">
+
+    <h2>Favorites</h2>
+
+    <div class="col-sm-3 sidenav">
+        <div class="well">
+            <p class="num-faves">Number of Favorites: {{favorites.length}}</p>
+        </div>
+    </div>
+
+    <div class="container-fluid text-center">
+    <div class="row content">
+      <div class="col-sm-2 sidenav-left" ng-repeat = "favorite in favorites">
+        <div class="pet-image"><img ng-src="{{animal.media.photos.photo[2].$t}}" class="random-pet-image" style="height:300px;width:200px;"></div>
+      </div>
+    </div>
+  </div>
+
+        <div class="pet-image" ng-repeat = "favorite in favorites">
+          <img ng-src="{{favorite.image}}" class="favorite-image">
+
+          <div class="favorite-info">
+
+            <h3>{{favorite.name}}</h3>
+            <p>Id: {{favorite.api_id}}</p>
+
+            <p>Description: {{favorite.description}}...</p>
+            <p><button class="delete-button" ng-click="deleteFavorite(favorite.api_id)">Delete from Favorites</button>
+            </p>
+
+        </div>
+
+    </div>
+
+</div>

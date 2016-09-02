@@ -1,0 +1,7 @@
+CREATE TABLE favorites (
+id SERIAL PRIMARY KEY,
+api_id INTEGER,
+image VARCHAR(300),
+name VARCHAR(300),
+description VARCHAR(555)
+);
